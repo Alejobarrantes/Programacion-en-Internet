@@ -1,0 +1,91 @@
+body{
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header{
+  background-color: #0c1c75;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+main{
+  padding: 20px;
+}
+
+menu{
+  background-color: #0c1c75;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+menu ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+menu li{
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.item{
+  display: inline-block;  
+  background-color: #0c0c75;  
+  margin-right: 10px;
+  padding: 1px 20px;
+  border-radius: 5px;
+}
+
+.item a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.form-actions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+imput focus{
+  outline: none;
+  border-color: #0c1c75;
+  color: #0c1c75;
+  box-shadow: 0 0 5px #0c1c75;
+}
+
+button{
+  background-color: #0c1c75;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover{
+  background-color: #054f34;
+}
+
+#video-section {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Espacio entre los videos */
+  /* Margen o espacio encima del video*/
+}
+ 
+#video-section iframe {
+  width: 100%;
+  max-width: 600px;
+  /* Ancho máximo del video */
+  height: auto;
+  border-radius: 10px;
+  border: 3px solid #727272;
+  /* Borde alrededor del video */
+}
