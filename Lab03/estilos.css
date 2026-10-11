@@ -88,3 +88,118 @@ footer, header {
   padding: 20px;
   color: #333;
 }
+
+    
+/* Tipografía global y contenedor */
+.contact-form {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.custom-legend {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #0c0c15;
+  padding: 10px 10px;
+}
+
+/* Filas organizadas con Flexbox */
+.form-row-2col {
+  display: flex;
+  gap: 20px; /* Distancia horizontal entre Nombre y Correo */
+  margin-bottom: 20px; /* Distancia hacia la fila inferior */
+}
+
+.form-row-2col .form-field {
+  flex: 1; /* Ambos campos toman el 50% del espacio disponible */
+}
+.form-row-bottom {
+  display: flex;
+  gap: 20px;
+  align-items: flex-end; /* Alinea la base del botón con el input de teléfono */
+}
+
+.form-row-bottom .form-field {
+  flex: 1; /* El campo de teléfono ocupa el 100% del espacio disponible */
+}
+
+.form-row-bottom .form-field-button {
+  flex:  0 0 auto;
+}
+
+/* Campos individuales y Etiquetas */
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+.form-label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #05090f;
+  margin-bottom: 8px; /* Separación vertical entre el texto y la caja */
+}
+/* Cajas de entrada (Inputs) estilizadas */
+.form-control {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid #acb1b8;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background-color: #f9fafb;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+}
+.form-control:focus {
+  background-color: #ffffff;
+  border-color: #4c6ef5;
+  box-shadow: 0 0 0 3px rgba(76, 110, 245, 0.15);
+}
+.form-control::placeholder {
+  color: #394e71;
+}
+/* Botón interactivo ajustado con el tono azul del sitio */
+.btn-contacto {
+  background-color: #4c6ef5;
+  color: #ffffff;
+  padding: 12px 26px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(76, 110, 245, 0.3);
+  white-space: nowrap;
+}
+.btn-contacto:hover {
+  background-color: #3b5bdb;
+  transform: translateY(-1px);
+}
+
+.btn-contacto:active {
+  transform: translateY(0);
+}
+/* Diseño adaptable para celulares */
+@media (max-width: 640px) {
+  .form-row-2col,
+  .form-row-bottom {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .btn-contacto {
+    width: 100%;
+    margin-top: 6px;
+  }
+ } 
+ .custom-fieldset {
+  border: 1px solid #babfc6;    /* Borde muy fino y sutil */
+  border-radius: 10px;           /* Redondeo de esquinas */
+  background-color: #ffffff;    /* Fondo blanco limpio */
+  padding: 20px 28px;            /* Espacio interno para que no quede apretado */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Sombra suave flotante */
+  max-width: 800px;
+  margin: 0 auto;
+}
