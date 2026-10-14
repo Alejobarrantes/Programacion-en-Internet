@@ -2,17 +2,18 @@ body{
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #f8fafc;
 }
 
 header{
-  background-color: #0c1c75;
+  background-color: #3e4c9a;
   color: white;
-  padding: 20px;
+  padding: 1cqh;
   text-align: center;
 }
 
 main{
-  padding: 20px;
+  padding: 1ch;
 }
 
 menu{
@@ -25,26 +26,24 @@ menu ul{
   list-style-type: none;
   margin: 0;
   padding: 0;
+  color: rgb(10, 76, 114);
 }
 
 menu li{
   display: inline-block;
   margin-right: 1rem;
+  color: rgb(226, 233, 230);
 }
 
-.item{
-  display: inline-block;  
-  background-color: #0c0c75;  
-  margin-right: 10px;
-  padding: 1px 20px;
-  border-radius: 5px;
-}
-
-.item a {
-  color: white;
-  text-decoration: none;
+menu a,
+.item a,
+.menu-item a,
+.nav-list a {
+  color: #ffffff !important;   /* Cambia el color del texto a blanco */
+  text-decoration: none;      /* Elimina la línea de subrayado */
   font-weight: bold;
 }
+
 
 .form-actions {
   text-align: center;
@@ -57,6 +56,7 @@ imput focus{
   color: #0c1c75;
   box-shadow: 0 0 5px #0c1c75;
 }
+
 
 button{
   background-color: #0c1c75;
@@ -89,3 +89,92 @@ button:hover{
   border: 3px solid #727272;
   /* Borde alrededor del video */
 }
+.form-group label {
+  display: block;
+  margin-left: 5px;
+  font-weight: bold;
+}
+.menu-item {
+  margin: 0 15px;
+  background-color: #405eb9;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+.form-input {
+  width: 100%;
+  padding: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.submit-button {
+  padding: 10px 50px;
+  border-radius: 15px;
+  transition: background-color 0.3s ease;
+}
+.nav-list {
+  list-style-type: none;
+  padding: 0;
+  /* Elimina el padding predeterminado de la lista */
+  display: flex;
+  /* Para alinear horizontalmente los elementos del menú */
+  justify-content: center;
+}
+/*Activar Flexbox para mostrar Género e Intereses en paralelo (lado a lado) */
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;            /* Espacio de separación entre los dos cuadros */
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.flex-container fieldset {
+  flex: 1;              /* Hace que ambos cuadros midan exactamente el 50% */
+  margin: 0;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #fafafa;
+}
+/* Botón interactivo ajustado con el tono azul del sitio */
+.btn-contacto {
+  background-color: #e8e9ef;
+  color: #ffffff;
+  padding: 12px 26px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(76, 110, 245, 0.3);
+  white-space: nowrap;
+}
+/* Ajustes de espacio para los textos (Labels) e Inputs */
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-top: 14px;     /* Espacio superior respecto al cuadro anterior */
+  margin-bottom: 6px;   /* Espacio entre el texto y la caja donde se escribe */
+  margin-left: 0;
+}
+.main-fieldset {
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background-color: #ffffff;
+  padding: 24px 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+.flex-container div > div {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+@media (max-width: 768px) {
+  .flex-container {
+    flex-direction: column; /* En celulares pasa a vertical para no apretar el texto */
+  }
+}
+.main-fieldset {
+    padding: 16px;
+  }
