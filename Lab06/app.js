@@ -146,6 +146,7 @@ const guardarEstudiante = async () => {
     apellido: txtApellido.value.trim(),
     correo: txtCorreo.value.trim(),
     carrera: txtCarrera.value.trim(),
+    fechaNac: txtFechaNac.value.trim()
   };
 
   if (!estudiante.nombre || !estudiante.apellido || !estudiante.correo || !estudiante.carrera) {
@@ -155,6 +156,8 @@ const guardarEstudiante = async () => {
 
   if (txtId.value) {
     // Actualizar estudiante existente
+    // update: actualiza los campos de estudiante con los valores del objeto estudiante
+    //[],[],[]
     const { error } = await supabase.from("estudiantes").update([estudiante]).eq("id", txtId.value);
 
     if (error) {

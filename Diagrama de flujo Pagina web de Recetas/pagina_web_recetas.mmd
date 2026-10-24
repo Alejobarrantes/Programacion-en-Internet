@@ -1,0 +1,60 @@
+classDiagram
+direction LR
+
+class Usuario {
+  +int IdUsuario
+  +string Nombre
+  +string Correo
+  +string Rol
+  +bool Activo
+}
+
+class Categoria {
+  +int IdCategoria
+  +string Nombre
+  +string Descripcion
+  +bool Activa
+}
+
+class Receta {
+  +int IdReceta
+  +int IdUsuario_FK
+  +int IdCategoria_FK
+  +string Titulo
+  +string Instrucciones
+  +int TiempoPreparacionMin
+  +int CaloriasTotales
+  +decimal CostoEstimado
+  +date FechaPublicacion
+}
+
+class Ingrediente {
+  +int IdIngrediente
+  +string Nombre
+  +int CaloriasPorUnidad
+  +decimal CostoUnidad
+}
+
+class RecetaIngrediente {
+  +int IdRecetaIngrediente
+  +int IdReceta_FK
+  +int IdIngrediente_FK
+  +decimal Cantidad
+  +string UnidadMedida
+}
+
+class Comentario {
+  +int IdComentario
+  +int IdUsuario_FK
+  +int IdReceta_FK
+  +string Contenido
+  +int Calificacion
+  +date Fecha
+}
+
+Usuario "1" --> "0..*" Receta : publica
+Categoria "1" --> "0..*" Receta : clasifica
+Receta "1" --> "0..*" RecetaIngrediente : contiene
+Ingrediente "1" --> "0..*" RecetaIngrediente : se_usa_en
+Usuario "1" --> "0..*" Comentario : escribe
+Receta "1" --> "0..*" Comentario : recibe
