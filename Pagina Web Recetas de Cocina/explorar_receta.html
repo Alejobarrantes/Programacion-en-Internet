@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explorar Recetas - GastroLab</title>
+  <link rel="stylesheet" href="estilos.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Encabezado de la página -->
+  <header>
+    <h1 id="main-title" class="title">Sabor & Arte</h1>
+    <h2 class="title">GastroLab</h2>
+    <nav class="nav-menu">
+      <ul class="nav-list">
+        <li class="menu-item"><a href="index.html">Registrarte Ahora</a></li>
+        <li class="menu-item"><a href="explorar_receta.html">Explorar Recetas</a></li>
+        <li class="menu-item"><a href="crear_receta.html">Crear Receta</a></li>
+        <li class="menu-item"><a href="recetas_favoritas.html">Mis Favoritas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container my-4">
+    <h1 class="title my-3">Explorar Catálogo de Recetas</h1>
+
+    <!-- 1. BARRA DE BÚSQUEDA Y FILTROS -->
+    <section class="custom-fieldset p-4 mb-4">
+      <form class="row g-3">
+        <div class="col-md-5">
+          <label class="form-label" for="buscar">Buscar por Título o Ingrediente:</label>
+          <input type="text" id="buscar" class="form-control" placeholder="Ej. Lasaña, Pollo, Chocolate...">
+        </div>
+        <div class="col-md-4">
+          <label class="form-label" for="categoria-filtro">Categoría:</label>
+          <select id="categoria-filtro" class="form-control">
+            <option value="">Todas las Categorías</option>
+            <option value="1">Postres y Repostería</option>
+            <option value="2">Comida Saludable</option>
+            <option value="3">Plato Principal</option>
+            <option value="4">Snacks</option>
+          </select>
+        </div>
+        <div class="col-md-3 d-flex align-items-end">
+          <button type="button" class="btn_explorar_receta w-100">Filtrar Recetas</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- 2. CATÁLOGO DE TARJETAS DE RECETAS -->
+    <section class="row row-cols-1 row-cols-md-2 g-4">
+      
+      <!-- Tarjeta 1 -->
+      <div class="col">
+        <div class="card h-100 shadow-sm p-3">
+          <div class="card-body">
+            <span class="badge bg-warning text-dark mb-2">Plato Principal</span>
+            <h4 class="card-title fw-bold">Lasaña de Carne Tradicional</h4>
+            <p class="card-text text-muted">Exquisita lasaña de carne molida con salsa boloñesa artesanal y queso mozzarella gratinado.</p>
+            
+            <ul class="list-group list-group-flush mb-3">
+              <li class="list-group-item px-0">⏱️ <strong>Tiempo:</strong> 45 minutos</li>
+              <li class="list-group-item px-0">₡ <strong>Costo Estimado:</strong> ₡4,500</li>
+              <li class="list-group-item px-0">🔥 <strong>Calorías:</strong> 520 kcal</li>
+              <li class="list-group-item px-0">⭐ <strong>Valoración:</strong> 4.8 / 5</li>
+            </ul>
+
+            <div class="d-flex justify-content-between align-items-center">
+              <button class="btn_explorar_receta" style="padding: 8px 16px;">Ver Detalle</button>
+              <button class="btn btn-outline-danger btn-sm">❤️ Guardar en Favoritas</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta 2 -->
+      <div class="col">
+        <div class="card h-100 shadow-sm p-3">
+          <div class="card-body">
+            <span class="badge bg-success mb-2">Comida Saludable</span>
+            <h4 class="card-title fw-bold">Bowl de Quinoa y Aguacate</h4>
+            <p class="card-text text-muted">Nutritivo plato vegetariano con quinoa, vegetales frescos, aguacate y aderezo de limón.</p>
+            
+            <ul class="list-group list-group-flush mb-3">
+              <li class="list-group-item px-0">⏱️ <strong>Tiempo:</strong> 15 minutos</li>
+              <li class="list-group-item px-0">₡ <strong>Costo Estimado:</strong> ₡2,800</li>
+              <li class="list-group-item px-0">🔥 <strong>Calorías:</strong> 310 kcal</li>
+              <li class="list-group-item px-0">⭐ <strong>Valoración:</strong> 4.9 / 5</li>
+            </ul>
+
+            <div class="d-flex justify-content-between align-items-center">
+              <button class="btn_explorar_receta" style="padding: 8px 16px;">Ver Detalle</button>
+              <button class="btn btn-outline-danger btn-sm">❤️ Guardar en Favoritas</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Pie de página -->
+  <footer>
+    <p>&copy; 2026 GastroLab</p>
+    <p>Soporte: <a href="mailto:soporte@gastrolab.ac.cr">GastroLab</a></p>
+  </footer>
+</body>
+
+</html>

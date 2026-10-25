@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear Receta - GastroLab</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header>
+    <h1 id="main-title" class="title">Sabor & Arte</h1>
+    <h2 class="title">GastroLab</h2>
+    <nav class="nav-menu">
+  <ul class="nav-list">
+    <li class="menu-item"><a href="index.html">Registrarte Ahora</a></li>
+    <li class="menu-item"><a href="explorar_receta.html">Explorar Recetas</a></li>
+    <li class="menu-item"><a href="crear_receta.html">Crear Receta</a></li>
+    <li class="menu-item"><a href="recetas_favoritas.html">Mis Favoritas</a></li>
+  </ul>
+</nav>
+  </header>
+
+  <main>
+    <h1 class="title" style="margin-top: 15px;">Crear Nueva Receta</h1>
+
+    <form class="guardar-form" action="guardarReceta.php" method="post">
+      <fieldset class="custom-fieldset">
+        <legend class="custom-legend">Detalles de la Preparacion</legend>
+
+        <!-- Fila 1: Título y Categoría -->
+        <div class="form-row-2col">
+          <div class="form-field">
+            <label class="form-label" for="titulo">Título de la Receta:</label>
+            <input class="form-control" type="text" id="titulo" name="titulo" required placeholder="Ej. Lasaña de Carne">
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="categoria">Categoría:</label>
+            <select class="form-control" id="categoria" name="categoria" required>
+              <option value="">Seleccione una opción</option>
+              <option value="1">Postres y Reposteria</option>
+              <option value="2">Comida Saludable</option>
+              <option value="3">Plato Principal</option>
+              <option value="4">Snacks</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Fila 2: Tiempo, Costo y Calorías -->
+        <div class="form-row-2col">
+          <div class="form-field">
+            <label class="form-label" for="tiempo">Tiempo (minutos):</label>
+            <input class="form-control" type="number" id="tiempo" name="tiempo" required placeholder="45">
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="costo">Costo Estimado (₡):</label>
+            <input class="form-control" type="number" id="costo" name="costo" required placeholder="4500">
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="calorias">Calorías Totales (kcal):</label>
+            <input class="form-control" type="number" id="calorias" name="calorias" required placeholder="520">
+          </div>
+        </div>
+
+        <!-- Fila 3: Ingredientes e Instrucciones -->
+        <div class="form-field" style="margin-bottom: 15px;">
+          <label class="form-label" for="ingredientes">Ingredientes (Cantidad y Unidad):</label>
+          <input class="form-control" type="text" id="ingredientes" name="ingredientes" required placeholder="Ej. 500g Carne molida, 200g Queso Mozzarella">
+        </div>
+
+        <div class="form-field">
+          <label class="form-label" for="instrucciones">Instrucciones de Preparación:</label>
+          <input class="form-control" type="text" id="instrucciones" name="instrucciones" required placeholder="Paso 1: Sofreír la carne. Paso 2: Armar capas...">
+        </div>
+
+        <!-- Botón para guardar receta -->
+        <div class="form-button-container">
+          <button class="btn_crear_receta" type="submit">Guardar tu receta y Publicala</button>
+        </div>
+      </fieldset>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 GastroLab</p>
+    <p>Soporte: <a href="mailto:soporte@gastrolab.ac.cr">GastroLab</a></p>
+  </footer>
+</body>
+</html>
