@@ -1,92 +1,178 @@
+<!-- Indica al navegador que este documento está escrito bajo el estándar de HTML5 -->
 <!DOCTYPE html>
+
+<!-- Etiqueta raíz que envuelve todo el documento e indica que el idioma principal es español -->
 <html lang="es">
+
+<!-- Cabecera del documento: contiene metadatos, configuraciones de pantalla y enlaces a estilos CSS -->
 <head>
+  <!-- Define la codificación de caracteres en UTF-8 para interpretar correctamente tildes y símbolos -->
   <meta charset="UTF-8">
+
+  <!-- Configura la ventana gráfica (viewport) para que la página sea adaptable (responsive) a móviles y tabletas -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Define el título que aparece en la pestaña del navegador web -->
   <title>Crear Receta - GastroLab</title>
+
+  <!-- Vincula la hoja de estilos personalizada local (estilos.css) para aplicar el diseño propio -->
   <link rel="stylesheet" href="estilos.css">
+<!-- Cierra la sección de cabecera del documento -->
 </head>
+
+<!-- Cuerpo del documento: contiene todo el contenido visual con el que interactúa el usuario -->
 <body>
+  <!-- Encabezado superior de la página web -->
   <header>
+    <!-- Título principal de la marca con ID específico para estilizarlo desde CSS -->
     <h1 id="main-title" class="title">Sabor & Arte</h1>
+
+    <!-- Subtítulo secundario de la marca o plataforma -->
     <h2 class="title">GastroLab</h2>
+
+    <!-- Contenedor semántico de la barra de navegación del sitio -->
     <nav class="nav-menu">
-  <ul class="nav-list">
-    <li class="menu-item"><a href="index.html">Registrarte Ahora</a></li>
-    <li class="menu-item"><a href="explorar_receta.html">Explorar Recetas</a></li>
-    <li class="menu-item"><a href="crear_receta.html">Crear Receta</a></li>
-    <li class="menu-item"><a href="recetas_favoritas.html">Mis Favoritas</a></li>
-    <li class="menu-item"><a href="comunidad.html">Comunidad</a></li>
-  </ul>
-</nav>
+      <!-- Lista no ordenada que agrupa los enlaces del menú superior -->
+      <ul class="nav-list">
+        <!-- Elemento de lista con enlace a la página principal de registro -->
+        <li class="menu-item"><a href="index.html">Registrarte Ahora</a></li>
+
+        <!-- Elemento de lista con enlace a la vista para explorar el catálogo de recetas -->
+        <li class="menu-item"><a href="explorar_receta.html">Explorar Recetas</a></li>
+
+        <!-- Elemento de lista con enlace a la vista actual para crear una nueva receta -->
+        <li class="menu-item"><a href="crear_receta.html">Crear Receta</a></li>
+
+        <!-- Elemento de lista con enlace a la vista de recetas favoritas guardadas -->
+        <li class="menu-item"><a href="recetas_favoritas.html">Mis Favoritas</a></li>
+
+        <!-- Elemento de lista con enlace a la sección de valoraciones y recomendaciones de la comunidad -->
+        <li class="menu-item"><a href="comunidad.html">Comunidad</a></li>
+      <!-- Cierra la lista del menú de navegación -->
+      </ul>
+    <!-- Cierra la barra de navegación -->
+    </nav>
+  <!-- Cierra el encabezado de la página -->
   </header>
 
+  <!-- Contenedor principal de la vista de creación de recetas -->
   <main>
+    <!-- Título principal de la sección con estilo en línea para aplicar margen superior de 15px -->
     <h1 class="title" style="margin-top: 15px;">Crear Nueva Receta</h1>
 
+    <!-- Formulario para ingresar los datos de la receta, que envía la información mediante método POST al backend guardarReceta.php -->
     <form class="guardar-form" action="guardarReceta.php" method="post">
+      <!-- Agrupador visual y semántico con estilos de campo personalizado para estructurar el formulario -->
       <fieldset class="custom-fieldset">
+        <!-- Título del grupo de campos para los detalles de la receta -->
         <legend class="custom-legend">Detalles de la Preparacion</legend>
 
-        <!-- Fila 1: Título y Categoría -->
+        <!-- Fila 1: Distribución en 2 columnas para el Título y la Categoría -->
         <div class="form-row-2col">
+          <!-- Campo 1: Título de la receta -->
           <div class="form-field">
+            <!-- Etiqueta descriptiva vinculada al campo del título -->
             <label class="form-label" for="titulo">Título de la Receta:</label>
+            <!-- Entrada de texto obligatoria (required) para el nombre de la preparación -->
             <input class="form-control" type="text" id="titulo" name="titulo" required placeholder="Ej. Lasaña de Carne">
+          <!-- Cierra el contenedor del campo del título -->
           </div>
 
+          <!-- Campo 2: Categoría de la receta -->
           <div class="form-field">
+            <!-- Etiqueta descriptiva vinculada al menú desplegable de categoría -->
             <label class="form-label" for="categoria">Categoría:</label>
+            <!-- Menú desplegable obligatorio para vincular la receta con una categoría específica -->
             <select class="form-control" id="categoria" name="categoria" required>
+              <!-- Opción por defecto vacía para forzar la selección obligatoria -->
               <option value="">Seleccione una opción</option>
+              <!-- Opción para la categoría de postres -->
               <option value="1">Postres y Reposteria</option>
+              <!-- Opción para la categoría de comida saludable -->
               <option value="2">Comida Saludable</option>
+              <!-- Opción para la categoría de plato principal -->
               <option value="3">Plato Principal</option>
+              <!-- Opción para la categoría de bocadillos o snacks -->
               <option value="4">Snacks</option>
+            <!-- Cierra el selector de categoría -->
             </select>
+          <!-- Cierra el contenedor del campo de categoría -->
           </div>
+        <!-- Cierra la primera fila de 2 columnas -->
         </div>
 
-        <!-- Fila 2: Tiempo, Costo y Calorías -->
+        <!-- Fila 2: Distribución en columnas para Tiempo, Costo y Calorías (métricas del modelo) -->
         <div class="form-row-2col">
+          <!-- Campo de número para el tiempo de preparación en minutos -->
           <div class="form-field">
+            <!-- Etiqueta para el tiempo de preparación -->
             <label class="form-label" for="tiempo">Tiempo (minutos):</label>
+            <!-- Entrada numérico-obligatoria para los minutos de preparación -->
             <input class="form-control" type="number" id="tiempo" name="tiempo" required placeholder="45">
+          <!-- Cierra el campo de tiempo -->
           </div>
 
+          <!-- Campo de número para el costo estimado en colones -->
           <div class="form-field">
+            <!-- Etiqueta para el costo estimado -->
             <label class="form-label" for="costo">Costo Estimado (₡):</label>
+            <!-- Entrada numérico-obligatoria para el presupuesto o costo -->
             <input class="form-control" type="number" id="costo" name="costo" required placeholder="4500">
+          <!-- Cierra el campo de costo -->
           </div>
 
+          <!-- Campo de número para las calorías totales -->
           <div class="form-field">
+            <!-- Etiqueta para el aporte calórico -->
             <label class="form-label" for="calorias">Calorías Totales (kcal):</label>
+            <!-- Entrada numérico-obligatoria para el valor nutricional en kcal -->
             <input class="form-control" type="number" id="calorias" name="calorias" required placeholder="520">
+          <!-- Cierra el campo de calorías -->
           </div>
+        <!-- Cierra la segunda fila de columnas -->
         </div>
 
-        <!-- Fila 3: Ingredientes e Instrucciones -->
+        <!-- Fila 3: Campos de texto para la lista de Ingredientes e Instrucciones paso a paso -->
+        <!-- Campo para ingresar la lista de ingredientes con un margen inferior de 15px -->
         <div class="form-field" style="margin-bottom: 15px;">
+          <!-- Etiqueta para la lista de ingredientes y sus unidades -->
           <label class="form-label" for="ingredientes">Ingredientes (Cantidad y Unidad):</label>
+          <!-- Entrada de texto obligatoria para ingresar los insumos de la receta -->
           <input class="form-control" type="text" id="ingredientes" name="ingredientes" required placeholder="Ej. 500g Carne molida, 200g Queso Mozzarella">
+        <!-- Cierra el campo de ingredientes -->
         </div>
 
+        <!-- Campo para detallar los pasos de la receta -->
         <div class="form-field">
+          <!-- Etiqueta para la explicación de la preparación -->
           <label class="form-label" for="instrucciones">Instrucciones de Preparación:</label>
+          <!-- Entrada de texto obligatoria con la secuencia de pasos -->
           <input class="form-control" type="text" id="instrucciones" name="instrucciones" required placeholder="Paso 1: Sofreír la carne. Paso 2: Armar capas...">
+        <!-- Cierra el campo de instrucciones -->
         </div>
 
-        <!-- Botón para guardar receta -->
+        <!-- Contenedor alineado para el botón de acción principal -->
         <div class="form-button-container">
+          <!-- Botón de tipo submit que procesa y envía el formulario completo -->
           <button class="btn_crear_receta" type="submit">Guardar tu receta y Publicar</button>
+        <!-- Cierra el contenedor del botón -->
         </div>
+      <!-- Cierra el grupo del formulario -->
       </fieldset>
+    <!-- Cierra la etiqueta del formulario -->
     </form>
+  <!-- Cierra la etiqueta del contenido principal -->
   </main>
 
+  <!-- Pie de página situado en la parte inferior del sitio -->
   <footer>
+    <!-- Muestra el aviso de derechos de autor con el nombre de la plataforma -->
     <p>&copy; 2026 GastroLab</p>
+    <!-- Enlace directo para enviar un correo electrónico al área de soporte técnico -->
     <p>Soporte: <a href="mailto:soporte@gastrolab.ac.cr">GastroLab</a></p>
+  <!-- Cierra el pie de página -->
   </footer>
+<!-- Cierra la etiqueta del cuerpo del documento -->
 </body>
+<!-- Cierra la etiqueta raíz HTML -->
 </html>

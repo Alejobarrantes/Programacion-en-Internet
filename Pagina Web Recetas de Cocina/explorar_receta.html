@@ -1,113 +1,214 @@
+<!-- Indica al navegador que este documento está escrito bajo el estándar de HTML5 -->
 <!DOCTYPE html>
+
+<!-- Etiqueta raíz que envuelve todo el documento e indica que el idioma principal es español -->
 <html lang="es">
 
+<!-- Cabecera del documento: contiene metadatos, configuraciones de pantalla y enlaces a estilos CSS -->
 <head>
+  <!-- Define la codificación de caracteres en UTF-8 para interpretar correctamente tildes y símbolos -->
   <meta charset="UTF-8">
+
+  <!-- Configura la ventana gráfica (viewport) para que la página sea adaptable (responsive) a móviles y tabletas -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Define el título que aparece en la pestaña del navegador web -->
   <title>Explorar Recetas - GastroLab</title>
+
+  <!-- Vincula la hoja de estilos personalizada local (estilos.css) para aplicar el diseño propio -->
   <link rel="stylesheet" href="estilos.css">
+
+  <!-- Importa la librería externa Bootstrap 5 desde un servidor CDN para componentes de diseño y grilla responsive -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Cierra la sección de cabecera del documento -->
 </head>
 
+<!-- Cuerpo del documento: contiene todo el contenido visual con el que interactúa el usuario -->
 <body>
-  <!-- Encabezado de la página -->
+  <!-- Encabezado superior de la página web -->
   <header>
+    <!-- Título principal de la marca con ID específico para estilizarlo desde CSS -->
     <h1 id="main-title" class="title">Sabor & Arte</h1>
+
+    <!-- Subtítulo secundario de la marca o plataforma -->
     <h2 class="title">GastroLab</h2>
+
+    <!-- Contenedor semántico de la barra de navegación del sitio -->
     <nav class="nav-menu">
+      <!-- Lista no ordenada que agrupa los enlaces del menú superior -->
       <ul class="nav-list">
+        <!-- Elemento de lista con enlace a la página principal de registro -->
         <li class="menu-item"><a href="index.html">Registrarte Ahora</a></li>
+
+        <!-- Elemento de lista con enlace a la vista actual para explorar el catálogo de recetas -->
         <li class="menu-item"><a href="explorar_receta.html">Explorar Recetas</a></li>
+
+        <!-- Elemento de lista con enlace al formulario de publicación de nuevas recetas -->
         <li class="menu-item"><a href="crear_receta.html">Crear Receta</a></li>
+
+        <!-- Elemento de lista con enlace a la vista de recetas favoritas guardadas -->
         <li class="menu-item"><a href="recetas_favoritas.html">Mis Favoritas</a></li>
+
+        <!-- Elemento de lista con enlace a la sección de valoraciones y recomendaciones de la comunidad -->
         <li class="menu-item"><a href="comunidad.html">Comunidad</a></li>
+      <!-- Cierra la lista del menú de navegación -->
       </ul>
+    <!-- Cierra la barra de navegación -->
     </nav>
+  <!-- Cierra el encabezado de la página -->
   </header>
 
+  <!-- Contenedor principal de la página, alineado al centro y con margen vertical usando Bootstrap -->
   <main class="container my-4">
+    <!-- Título principal de la sección con margen vertical -->
     <h1 class="title my-3">Explorar Catálogo de Recetas</h1>
 
     <!-- 1. BARRA DE BÚSQUEDA Y FILTROS -->
+    <!-- Contenedor con borde personalizado y padding interno para envolver el formulario de filtrado -->
     <section class="custom-fieldset p-4 mb-4">
+      <!-- Formulario configurado con sistema de rejilla de Bootstrap para distribuir los controles de búsqueda -->
       <form class="row g-3">
+        <!-- Columna de 5 espacios en pantallas medianas para el cuadro de texto de búsqueda -->
         <div class="col-md-5">
+          <!-- Etiqueta del campo de búsqueda por título o ingrediente -->
           <label class="form-label" for="buscar">Buscar por Título o Ingrediente:</label>
+          <!-- Entrada de texto para escribir el criterio de búsqueda -->
           <input type="text" id="buscar" class="form-control" placeholder="Ej. Lasaña, Pollo, Chocolate...">
+        <!-- Cierra la columna de búsqueda por texto -->
         </div>
+
+        <!-- Columna de 4 espacios en pantallas medianas para el selector de categoría -->
         <div class="col-md-4">
+          <!-- Etiqueta para la lista desplegable de categorías -->
           <label class="form-label" for="categoria-filtro">Categoría:</label>
+          <!-- Menú desplegable para filtrar el catálogo por una categoría específica -->
           <select id="categoria-filtro" class="form-control">
+            <!-- Opción por defecto para mostrar el catálogo completo sin filtro -->
             <option value="">Todas las Categorías</option>
+            <!-- Opción de filtro para postres -->
             <option value="1">Postres y Repostería</option>
+            <!-- Opción de filtro para comida saludable -->
             <option value="2">Comida Saludable</option>
+            <!-- Opción de filtro para platos principales -->
             <option value="3">Plato Principal</option>
+            <!-- Opción de filtro para snacks o bocadillos -->
             <option value="4">Snacks</option>
+          <!-- Cierra el selector de categoría -->
           </select>
+        <!-- Cierra la columna del filtro de categoría -->
         </div>
+
+        <!-- Columna de 3 espacios alineada al final verticalmente para el botón de acción -->
         <div class="col-md-3 d-flex align-items-end">
+          <!-- Botón de disparo para ejecutar el filtrado de las recetas -->
           <button type="button" class="btn_explorar_receta w-100">Filtrar Recetas</button>
+        <!-- Cierra la columna del botón -->
         </div>
+      <!-- Cierra el formulario de filtrado -->
       </form>
+    <!-- Cierra la sección del bloque de búsqueda -->
     </section>
 
     <!-- 2. CATÁLOGO DE TARJETAS DE RECETAS -->
+    <!-- Rejilla adaptable que distribuye las recetas en 1 columna en móviles y 2 columnas en pantallas medianas -->
     <section class="row row-cols-1 row-cols-md-2 g-4">
       
-      <!-- Tarjeta 1 -->
+      <!-- Tarjeta 1: Primera columna del catálogo -->
       <div class="col">
+        <!-- Tarjeta de Bootstrap con sombra leve y altura completa para equiparar tamaño -->
         <div class="card h-100 shadow-sm p-3">
+          <!-- Cuerpo de la tarjeta con el contenido detallado de la primera receta -->
           <div class="card-body">
+            <!-- Etiqueta (badge) visual para identificar la categoría del platillo -->
             <span class="badge bg-warning text-dark mb-2">Plato Principal</span>
+            <!-- Título de la receta en negrita -->
             <h4 class="card-title fw-bold">Lasaña de Carne Tradicional</h4>
+            <!-- Breve descripción descriptiva del platillo -->
             <p class="card-text text-muted">Exquisita lasaña de carne molida con salsa boloñesa artesanal y queso mozzarella gratinado.</p>
             
+            <!-- Lista limpia con las métricas extraídas de las entidades del modelo -->
             <ul class="list-group list-group-flush mb-3">
+              <!-- Muestra el tiempo estimado de preparación -->
               <li class="list-group-item px-0">⏱️ <strong>Tiempo:</strong> 45 minutos</li>
+              <!-- Muestra el presupuesto o costo estimado en colones -->
               <li class="list-group-item px-0">₡ <strong>Costo Estimado:</strong> ₡4,500</li>
+              <!-- Muestra el aporte calórico total de la receta -->
               <li class="list-group-item px-0">🔥 <strong>Calorías:</strong> 520 kcal</li>
+              <!-- Muestra la puntuación promedio basada en la entidad Comentario -->
               <li class="list-group-item px-0">⭐ <strong>Valoración:</strong> 4.8 / 5</li>
+            <!-- Cierra la lista de métricas -->
             </ul>
 
+            <!-- Contenedor alineado horizontalmente con los botones de interacción -->
             <div class="d-flex justify-content-between align-items-center">
+              <!-- Botón para ver el detalle e instrucciones paso a paso -->
               <button class="btn_explorar_receta" style="padding: 8px 16px;">Ver Detalle</button>
+              <!-- Botón interactivo para agregar el platillo a la lista de favoritas -->
               <button class="btn btn-outline-danger btn-sm">❤️ Guardar en Favoritas</button>
+            <!-- Cierra el contenedor de botones de la primera tarjeta -->
             </div>
+          <!-- Cierra el cuerpo de la primera tarjeta -->
           </div>
+        <!-- Cierra el contenedor de la primera tarjeta -->
         </div>
+      <!-- Cierra la primera columna -->
       </div>
 
-      <!-- Tarjeta 2 -->
+      <!-- Tarjeta 2: Segunda columna del catálogo -->
       <div class="col">
+        <!-- Tarjeta de la segunda receta con sombra e igual altura -->
         <div class="card h-100 shadow-sm p-3">
+          <!-- Cuerpo informativo de la segunda tarjeta -->
           <div class="card-body">
+            <!-- Etiqueta distintiva verde para la categoría saludable -->
             <span class="badge bg-success mb-2">Comida Saludable</span>
+            <!-- Nombre de la segunda receta -->
             <h4 class="card-title fw-bold">Bowl de Quinoa y Aguacate</h4>
+            <!-- Descripción corta de la receta -->
             <p class="card-text text-muted">Nutritivo plato vegetariano con quinoa, vegetales frescos, aguacate y aderezo de limón.</p>
             
+            <!-- Lista flush de Bootstrap con los datos y métricas clave -->
             <ul class="list-group list-group-flush mb-3">
+              <!-- Tiempo de preparación -->
               <li class="list-group-item px-0">⏱️ <strong>Tiempo:</strong> 15 minutos</li>
+              <!-- Costo estimado en colones -->
               <li class="list-group-item px-0">₡ <strong>Costo Estimado:</strong> ₡2,800</li>
+              <!-- Conteo de calorías en kcal -->
               <li class="list-group-item px-0">🔥 <strong>Calorías:</strong> 310 kcal</li>
+              <!-- Valoración promedio dada por los comensales -->
               <li class="list-group-item px-0">⭐ <strong>Valoración:</strong> 4.9 / 5</li>
+            <!-- Cierra la lista de métricas de la segunda tarjeta -->
             </ul>
 
+            <!-- Contenedor flex con los botones de acción -->
             <div class="d-flex justify-content-between align-items-center">
+              <!-- Botón para ir a los detalles de la segunda receta -->
               <button class="btn_explorar_receta" style="padding: 8px 16px;">Ver Detalle</button>
+              <!-- Botón para marcar como favorita -->
               <button class="btn btn-outline-danger btn-sm">❤️ Guardar en Favoritas</button>
+            <!-- Cierra el contenedor de botones de la segunda tarjeta -->
             </div>
+          <!-- Cierra el cuerpo de la segunda tarjeta -->
           </div>
+        <!-- Cierra el contenedor de la segunda tarjeta -->
         </div>
+      <!-- Cierra la segunda columna -->
       </div>
 
+    <!-- Cierra la rejilla del catálogo de recetas -->
     </section>
+  <!-- Cierra el contenedor principal del sitio -->
   </main>
 
-  <!-- Pie de página -->
+  <!-- Pie de página situado en el extremo inferior del sitio -->
   <footer>
+    <!-- Muestra el aviso de derechos de autor -->
     <p>&copy; 2026 GastroLab</p>
+    <!-- Enlace directo para enviar un correo electrónico al área de soporte técnico -->
     <p>Soporte: <a href="mailto:soporte@gastrolab.ac.cr">GastroLab</a></p>
+  <!-- Cierra el pie de página -->
   </footer>
+<!-- Cierra la etiqueta del cuerpo del documento -->
 </body>
-
+<!-- Cierra la etiqueta raíz HTML -->
 </html>

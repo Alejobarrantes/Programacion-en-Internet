@@ -1,107 +1,200 @@
+<!-- Indica al navegador que este documento está escrito bajo el estándar de HTML5 -->
 <!DOCTYPE html>
+
+<!-- Etiqueta raíz que envuelve todo el documento e indica que el idioma principal es español -->
 <html lang="es">
 
+<!-- Cabecera del documento: contiene metadatos, configuraciones de pantalla y enlaces a estilos CSS -->
 <head>
+  <!-- Define la codificación de caracteres en UTF-8 para interpretar correctamente tildes y símbolos -->
   <meta charset="UTF-8">
+
+  <!-- Configura la ventana gráfica (viewport) para que la página sea adaptable (responsive) a móviles y tabletas -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Define el título que aparece en la pestaña del navegador web -->
   <title>Comunidad & Reseñas - GastroLab</title>
+
+  <!-- Vincula la hoja de estilos personalizada local (estilos.css) para aplicar el diseño propio -->
   <link rel="stylesheet" href="estilos.css">
+
+  <!-- Importa la librería externa Bootstrap 5 desde un servidor CDN para componentes de diseño -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Cierra la sección de cabecera del documento -->
 </head>
 
+<!-- Cuerpo del documento: contiene todo el contenido visual con el que interactúa el usuario -->
 <body>
-  <!-- Encabezado de la página -->
+  <!-- Encabezado superior de la página web -->
   <header>
+    <!-- Título principal de la marca con ID específico para estilizarlo desde CSS -->
     <h1 id="main-title" class="title">Sabor & Arte</h1>
+
+    <!-- Subtítulo secundario de la marca o plataforma -->
     <h2 class="title">GastroLab</h2>
+
+    <!-- Contenedor semántico de la barra de navegación del sitio -->
     <nav class="nav-menu">
+      <!-- Lista no ordenada que agrupa los enlaces del menú superior -->
       <ul class="nav-list">
+        <!-- Elemento de lista con enlace a la página principal de registro -->
         <li class="menu-item"><a href="index.html">Registrarte Ahora</a></li>
+
+        <!-- Elemento de lista con enlace a la vista para explorar el catálogo de recetas -->
         <li class="menu-item"><a href="explorar_receta.html">Explorar Recetas</a></li>
+
+        <!-- Elemento de lista con enlace al formulario para crear una nueva receta -->
         <li class="menu-item"><a href="crear_receta.html">Crear Receta</a></li>
+
+        <!-- Elemento de lista con enlace a la vista de recetas favoritas guardadas -->
         <li class="menu-item"><a href="recetas_favoritas.html">Mis Favoritas</a></li>
+
+        <!-- Elemento de lista con enlace a la vista actual de la comunidad -->
         <li class="menu-item"><a href="comunidad.html">Comunidad</a></li>
+      <!-- Cierra la lista del menú de navegación -->
       </ul>
+    <!-- Cierra la barra de navegación -->
     </nav>
+  <!-- Cierra el encabezado de la página -->
   </header>
 
+  <!-- Contenedor principal de la página, alineado al centro y con margen vertical usando Bootstrap -->
   <main class="container my-4">
+    <!-- Título principal de la sección con margen vertical -->
     <h1 class="title my-3">Comunidad & Recomendaciones</h1>
 
     <!-- FORMULARIO PARA AGREGAR NUEVO COMENTARIO -->
+    <!-- Contenedor con borde personalizado y padding interno para envolver el formulario -->
     <section class="custom-fieldset p-4 mb-4">
+      <!-- Título principal del bloque del formulario -->
       <legend class="custom-legend">Déjanos tu opinión sobre alguna receta</legend>
+
+      <!-- Formulario para publicar comentarios, enviando los datos vía POST a guardarComentario.php -->
       <form action="guardarComentario.php" method="post">
         
+        <!-- Campo desplegable para relacionar la opinión con una receta específica (IdReceta_FK) -->
         <div class="form-field mb-3">
+          <!-- Etiqueta vinculada al menú de selección de recetas -->
           <label class="form-label" for="receta_fk">Selecciona la Receta:</label>
+          <!-- Selector obligatorio para vincular la reseña a una receta -->
           <select class="form-control" id="receta_fk" name="receta_fk" required>
+            <!-- Opción nula requerida por defecto -->
             <option value="">Seleccione una receta...</option>
+            <!-- Opción asociada a la receta con ID 1 -->
             <option value="1">Lasaña de Carne Tradicional</option>
+            <!-- Opción asociada a la receta con ID 2 -->
             <option value="2">Bowl de Quinoa y Aguacate</option>
+          <!-- Cierra el selector de receta -->
           </select>
+        <!-- Cierra el contenedor del campo de selección de receta -->
         </div>
 
+        <!-- Campo desplegable para capturar la puntuación en estrellas (Calificacion) -->
         <div class="form-field mb-3">
+          <!-- Etiqueta vinculada al menú de calificación -->
           <label class="form-label" for="calificacion">Calificación (Estrellas):</label>
+          <!-- Selector obligatorio para registrar el nivel de satisfacción (1 a 5) -->
           <select class="form-control" id="calificacion" name="calificacion" required>
+            <!-- Opción de calificación valor 5 -->
             <option value="5">⭐⭐⭐⭐⭐ (Excelente)</option>
+            <!-- Opción de calificación valor 4 -->
             <option value="4">⭐⭐⭐⭐ (Muy buena)</option>
+            <!-- Opción de calificación valor 3 -->
             <option value="3">⭐⭐⭐ (Buena)</option>
+            <!-- Opción de calificación valor 2 -->
             <option value="2">⭐⭐ (Regular)</option>
+            <!-- Opción de calificación valor 1 -->
             <option value="1">⭐ (Mala)</option>
+          <!-- Cierra el selector de calificación -->
           </select>
+        <!-- Cierra el contenedor del campo de calificación -->
         </div>
 
+        <!-- Campo de área de texto multilínea para redactar la reseña o sugerencia (Contenido) -->
         <div class="form-field mb-3">
+          <!-- Etiqueta vinculada al área de texto del comentario -->
           <label class="form-label" for="contenido">Tu Recomendación o Comentario:</label>
+          <!-- Entrada de texto extensa y obligatoria con 3 filas visibles de altura por defecto -->
           <textarea class="form-control" id="contenido" name="contenido" rows="3" required placeholder="Comparte algún consejo de preparación o cambio de ingrediente..."></textarea>
+        <!-- Cierra el contenedor del campo de contenido -->
         </div>
 
+        <!-- Contenedor alineado para el botón de publicación -->
         <div class="form-button-container">
+          <!-- Botón de envío de formulario estilizado para publicar la recomendación -->
           <button type="submit" class="btn-crear-receta">Publicar Comentario</button>
+        <!-- Cierra el contenedor del botón -->
         </div>
+      <!-- Cierra el formulario de comentarios -->
       </form>
+    <!-- Cierra la sección del formulario de nuevo comentario -->
     </section>
 
     <!-- LISTADO DE RECOMENDACIONES DE LA COMUNIDAD -->
+    <!-- Contenedor personalizado que engloba el historial de valoraciones existentes -->
     <section class="custom-fieldset p-4">
+      <!-- Subtítulo del bloque con fuente Georgia y color naranja cálido de la marca -->
       <h3 style="font-family: 'Georgia', serif; color: #d97706;" class="mb-3">Últimas Valoraciones</h3>
 
-      <!-- Comentario 1 -->
+      <!-- Comentario 1: Tarjeta flotante individual de reseña -->
       <div class="card p-3 mb-3">
+        <!-- Encabezado de la tarjeta alineado horizontalmente con Flexbox -->
         <div class="d-flex justify-content-between align-items-center">
+          <!-- Datos del autor y la receta comentada -->
           <div>
+            <!-- Nombre del usuario autor del comentario (Usuario) -->
             <strong>María González</strong> 
+            <!-- Texto tenue que indica sobre cuál receta emitió el comentario -->
             <small class="text-muted">(sobre: Lasaña de Carne Tradicional)</small>
           </div>
+          <!-- Representación gráfica de la calificación otorgada (5 estrellas) -->
           <span class="text-warning">⭐⭐⭐⭐⭐</span>
+        <!-- Cierra la cabecera del comentario -->
         </div>
+        <!-- Texto con el cuerpo y sugerencia técnica dejada por el usuario (Contenido) -->
         <p class="my-2 text-secondary">"Súper fácil de preparar. Recomiendo hornear 5 minutos extra para lograr un gratinado crujiente en el queso."</p>
+        <!-- Fecha de registro de la valoración -->
         <small class="text-muted" style="font-size: 0.8em;">Fecha: 25/10/2026</small>
+      <!-- Cierra la primera tarjeta de reseña -->
       </div>
 
-      <!-- Comentario 2 -->
+      <!-- Comentario 2: Segunda tarjeta flotante de reseña -->
       <div class="card p-3">
+        <!-- Encabezado de la tarjeta para la segunda reseña -->
         <div class="d-flex justify-content-between align-items-center">
+          <!-- Datos del segundo autor y receta -->
           <div>
+            <!-- Nombre del segundo usuario autor (Usuario) -->
             <strong>Carlos Rojas</strong> 
+            <!-- Receta sobre la cual opinó -->
             <small class="text-muted">(sobre: Bowl de Quinoa y Aguacate)</small>
           </div>
+          <!-- Representación gráfica de la calificación otorgada (4 estrellas) -->
           <span class="text-warning">⭐⭐⭐⭐</span>
+        <!-- Cierra la cabecera de la segunda reseña -->
         </div>
+        <!-- Texto con el cuerpo y sugerencia técnica del segundo usuario -->
         <p class="my-2 text-secondary">"Muy fresca y saludable. Le agregué un chorrito de aceite de oliva y un toque de ajonjolí tostado."</p>
+        <!-- Fecha de registro de la segunda valoración -->
         <small class="text-muted" style="font-size: 0.8em;">Fecha: 24/10/2026</small>
+      <!-- Cierra la segunda tarjeta de reseña -->
       </div>
+    <!-- Cierra la sección del listado de la comunidad -->
     </section>
 
+  <!-- Cierra el contenedor principal de la vista -->
   </main>
 
-  <!-- Pie de página -->
+  <!-- Pie de página situado en el extremo inferior de la página -->
   <footer>
+    <!-- Aviso de copyright de la plataforma -->
     <p>&copy; 2026 Plataforma Gastronómica GastroLab</p>
+    <!-- Enlace de contacto por correo electrónico hacia soporte técnico -->
     <p>Soporte: <a href="mailto:soporte@gastrolab.ac.cr">GastroLab</a></p>
+  <!-- Cierra el pie de página -->
   </footer>
+<!-- Cierra la etiqueta del cuerpo visible -->
 </body>
 
+<!-- Cierra la etiqueta raíz del documento HTML -->
 </html>
