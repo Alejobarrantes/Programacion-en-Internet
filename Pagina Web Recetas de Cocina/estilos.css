@@ -89,7 +89,7 @@ h2.title {
 
 /* Contenedor individual del botón del menú */
 .menu-item {
-  margin: 0 10px;
+  margin: 4px;
   background-color: #d97706;
   border-radius: 50px;
   box-shadow: 0 4px 10px rgba(217, 119, 6, 0.25);
@@ -103,8 +103,8 @@ h2.title {
   color: #ffffff;
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.95rem;
-  padding: 12px 28px;
+  font-size: 0.9rem;
+  padding: 8px 18px; /* Padding reducido para evitar cortes de texto */
   text-align: center;
   white-space: nowrap;
 }
@@ -250,20 +250,6 @@ h2.title {
   transform: translateY(-1px);
 }
 
-.btn_crear_receta {
-  background-color: #d97706;
-  color: #ffffff;
-  padding: 12px 26px;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 6px rgba(217, 119, 6, 0.3);
-  white-space: nowrap;
-}
-
 
 /* ===================================================
    7. COMPONENTES, TARJETAS Y MULTIMEDIA
@@ -332,32 +318,4 @@ h2.title {
 /* Utilidad para ocultar elementos mediante JavaScript */
 .d-none {
   display: none !important;
-}
-.nav-list {
-  list-style-type: none;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap; /* Permite que los botones bajen de fila si no caben */
-  gap: 8px;        /* Espaciado uniforme entre píldoras */
-}
-
-.menu-item {
-  margin: 4px;
-  background-color: #d97706;
-  border-radius: 50px;
-  box-shadow: 0 4px 10px rgba(217, 119, 6, 0.25);
-  transition: all 0.3s ease;
-  overflow: hidden;
-}
-
-.menu-item a {
-  display: inline-block;
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9rem;
-  padding: 8px 18px; /* Padding reducido para evitar cortes de texto */
-  text-align: center;
-  white-space: nowrap;
-}
+  }
