@@ -83,6 +83,8 @@ h2.title {
   padding: 0;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap; /* Permite que los botones bajen de fila si no caben */
+  gap: 8px;        /* Espaciado uniforme entre píldoras */
 }
 
 /* Contenedor individual del botón del menú */
