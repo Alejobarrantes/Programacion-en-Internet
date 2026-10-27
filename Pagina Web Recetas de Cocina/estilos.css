@@ -331,3 +331,31 @@ h2.title {
 .d-none {
   display: none !important;
 }
+.nav-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Permite que los botones bajen de fila si no caben */
+  gap: 8px;        /* Espaciado uniforme entre píldoras */
+}
+
+.menu-item {
+  margin: 4px;
+  background-color: #d97706;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(217, 119, 6, 0.25);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.menu-item a {
+  display: inline-block;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 8px 18px; /* Padding reducido para evitar cortes de texto */
+  text-align: center;
+  white-space: nowrap;
+}
