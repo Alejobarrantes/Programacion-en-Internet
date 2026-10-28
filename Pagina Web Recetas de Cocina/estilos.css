@@ -224,7 +224,7 @@ h2.title {
   box-shadow: 0 6px 16px rgba(217, 119, 6, 0.35);
 }
 
-/* Botones principales tipo "píldora" con degradado */
+/* Botones principales tipo "píldora" con degradado unificados */
 .btn_crear_receta, 
 .submit-button,
 .btn_explorar_receta {
@@ -245,9 +245,11 @@ h2.title {
 }
 
 .btn_crear_receta:hover,
-.submit-button:hover {
-  background-color: #b45309;
-  transform: translateY(-1px);
+.submit-button:hover,
+.btn_explorar_receta:hover {
+  background: linear-gradient(135deg, #b45309 0%, #92400e 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(217, 119, 6, 0.35);
 }
 
 
@@ -318,4 +320,4 @@ h2.title {
 /* Utilidad para ocultar elementos mediante JavaScript */
 .d-none {
   display: none !important;
-  }
+}
