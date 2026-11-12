@@ -146,7 +146,7 @@ const guardarEstudiante = async () => {
     apellido: txtApellido.value.trim(),
     correo: txtCorreo.value.trim(),
     carrera: txtCarrera.value.trim(),
-    fechaNac: txtFechaNac.value.trim()
+    Fecha_nacimiento: txtFechaNacimiento.value.trim()
   };
 
   if (!estudiante.nombre || !estudiante.apellido || !estudiante.correo || !estudiante.carrera) {
